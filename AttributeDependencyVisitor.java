@@ -11,9 +11,6 @@ public class AttributeDependencyVisitor extends VoidVisitorAdapter<Void> {
 		System.out.println(n.toString());
 		//MainRun.AttributeList.add(n.toString());
 		String AttributeDeclaration = n.toString();
-		//System.out.println(
-		//		n.toString().substring(n.toString().substring(0, n.toString().lastIndexOf(" ")).lastIndexOf(" ") + 1,
-		//				n.toString().lastIndexOf(" ")));
 		String AttributeType = n.toString().substring(
 				n.toString().substring(0, n.toString().lastIndexOf(" ")).lastIndexOf(" ") + 1,
 				n.toString().lastIndexOf(" "));
