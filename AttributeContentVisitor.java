@@ -14,13 +14,9 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 			System.out.println(
 					n.toString().substring(n.toString().substring(0, n.toString().lastIndexOf(" ")).lastIndexOf(" ") + 1,
 							n.toString().lastIndexOf(" ")));
-			//String AttributeType = n.toString().substring(
-			//		n.toString().substring(0, n.toString().lastIndexOf(" ")).lastIndexOf(" ") + 1,
-			//		n.toString().lastIndexOf(" "));
-			try {
+				try {
 				FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS,AttributeDeclaration);
 				} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
