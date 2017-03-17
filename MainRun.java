@@ -47,9 +47,11 @@ public class MainRun {
 				
 				DependencyVisitor.startDepencyComment();
 				DependencyVisitor.defaultDepencyComment();
+					
 				new ClassDependencyVisitor().visit(cu, null);
 				new AttributeDependencyVisitor().visit(cu, null);
 				new MethodDepedencyVisitor().visit(cu, null);
+					
 				DependencyVisitor.endDepencyComment();
 				
 				new ClassContentVisitor().visit(cu, null);
