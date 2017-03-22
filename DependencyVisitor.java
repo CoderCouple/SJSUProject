@@ -95,7 +95,7 @@ public class DependencyVisitor {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					
+				
 					System.out.println("/** @composed 1 Has 1..* " + AttributeType + " */");
 				}
 			}
