@@ -16,6 +16,7 @@ public class ClassContentVisitor extends VoidVisitorAdapter<Object> {
 			} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 	
 	}
