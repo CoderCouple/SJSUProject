@@ -22,6 +22,7 @@ public class AttributeDependencyVisitor extends VoidVisitorAdapter<Void> {
 				DependencyVisitor.getAttributeDependencyComment(AttributeType, AttributeDeclaration);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 
