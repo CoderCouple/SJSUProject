@@ -9,6 +9,7 @@ public class DependencyVisitor {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 	}
 	public static void defaultDepencyComment() {
