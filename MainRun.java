@@ -21,7 +21,6 @@ public class MainRun {
 	public static ArrayList<String> ClassList = new ArrayList<String>();
 	
 
-	
 
 	public static void main(String[] args) throws Exception {
 		FileOperations.readListContent(SOURCE_FILE_PATH);
@@ -48,11 +47,9 @@ public class MainRun {
 				
 				DependencyVisitor.startDepencyComment();
 				DependencyVisitor.defaultDepencyComment();
-					
 				new ClassDependencyVisitor().visit(cu, null);
 				new AttributeDependencyVisitor().visit(cu, null);
 				new MethodDepedencyVisitor().visit(cu, null);
-					
 				DependencyVisitor.endDepencyComment();
 				
 				new ClassContentVisitor().visit(cu, null);
@@ -72,5 +69,4 @@ public class MainRun {
 
 	
 }
-
 
