@@ -9,7 +9,6 @@ public class DependencyVisitor {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
 	}
 	public static void defaultDepencyComment() {
@@ -73,7 +72,7 @@ public class DependencyVisitor {
 			if (MainRun.FileListAcess.get(i).equals(MethodParameter)) {
 				System.out.println("/** @depend - <uses> - " + MethodParameter + " */");
 				try {
-					FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS, " * @depend - <uses> - " + MethodParameter + "");
+					FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS, "* @depend - <uses> - " + MethodParameter + "");
 					} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -96,7 +95,7 @@ public class DependencyVisitor {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				
+					
 					System.out.println("/** @composed 1 Has 1..* " + AttributeType + " */");
 				}
 			}
