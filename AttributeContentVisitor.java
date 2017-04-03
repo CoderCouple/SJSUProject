@@ -4,7 +4,7 @@ import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
 	public class AttributeContentVisitor extends VoidVisitorAdapter<Void> {
-		
+
 		@Override
 		public void visit(FieldDeclaration n, Void arg) {
 			super.visit(n, arg);
@@ -14,9 +14,13 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 			System.out.println(
 					n.toString().substring(n.toString().substring(0, n.toString().lastIndexOf(" ")).lastIndexOf(" ") + 1,
 							n.toString().lastIndexOf(" ")));
-				try {
+			//String AttributeType = n.toString().substring(
+			//		n.toString().substring(0, n.toString().lastIndexOf(" ")).lastIndexOf(" ") + 1,
+			//		n.toString().lastIndexOf(" "));
+			try {
 				FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS,AttributeDeclaration);
 				} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
