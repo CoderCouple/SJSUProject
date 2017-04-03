@@ -7,8 +7,7 @@ public class MethodContentVisitor extends VoidVisitorAdapter<Void> {
 	@Override
 	public void visit(MethodDeclaration n, Void arg) {
 		super.visit(n, arg);
-	//System.out.println(n.getDeclarationAsString());
-		
+		 //System.out.println(n.getDeclarationAsString());
 		 MainRun.MethodList.add(n.toString());
 		 String MethodContent=n.toString();
 		 //String MethodContent=n.getDeclarationAsString().substring(n.getDeclarationAsString().lastIndexOf("(")+1,n.getDeclarationAsString().lastIndexOf(")"))+MainRun.MethodEndSpecifier;
