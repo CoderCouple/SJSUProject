@@ -9,8 +9,11 @@ public class AttributeDependencyVisitor extends VoidVisitorAdapter<Void> {
 	public void visit(FieldDeclaration n, Void arg) {
 		super.visit(n, arg);
 		System.out.println(n.toString());
-	
+		//MainRun.AttributeList.add(n.toString());
 		String AttributeDeclaration = n.toString();
+		//System.out.println(
+		//		n.toString().substring(n.toString().substring(0, n.toString().lastIndexOf(" ")).lastIndexOf(" ") + 1,
+		//				n.toString().lastIndexOf(" ")));
 		String AttributeType = n.toString().substring(
 				n.toString().substring(0, n.toString().lastIndexOf(" ")).lastIndexOf(" ") + 1,
 				n.toString().lastIndexOf(" "));
@@ -22,7 +25,6 @@ public class AttributeDependencyVisitor extends VoidVisitorAdapter<Void> {
 				DependencyVisitor.getAttributeDependencyComment(AttributeType, AttributeDeclaration);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
-				
 				e.printStackTrace();
 			}
 
