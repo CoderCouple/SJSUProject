@@ -5,6 +5,7 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
 	public class AttributeContentVisitor extends VoidVisitorAdapter<Void> {
 
+		
 		@Override
 		public void visit(FieldDeclaration n, Void arg) {
 			super.visit(n, arg);
