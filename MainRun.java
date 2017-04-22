@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 
-
-
 public class MainRun {
 	public static final String OS_HOME = "/home/sunil28";
 	public static final String SOURCE_FILE_PATH = OS_HOME + "/" + "UML_Test";
