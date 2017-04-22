@@ -67,6 +67,7 @@ public class FileOperations {
 		}
 	}
 	
+	
 	public static void classEnd() {
 		try {
 			FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS,"}");
