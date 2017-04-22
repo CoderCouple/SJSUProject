@@ -3,7 +3,6 @@ import java.io.IOException;
 
 public class DependencyVisitor {
 
-	
 	public static void startDepencyComment() {
 		try {
 			FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS, "/**");
