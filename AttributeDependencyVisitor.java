@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
+
 public class AttributeDependencyVisitor extends VoidVisitorAdapter<Void> {
 
 	@Override
