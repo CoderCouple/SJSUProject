@@ -1,23 +1,17 @@
 import java.io.IOException;
 
+import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
-
-public class MethodContentVisitor extends VoidVisitorAdapter<Void> {
+public class MethodContentVisitor extends VoidVisitorAdapter<ClassInstance> {
 	@Override
-	public void visit(MethodDeclaration n, Void arg) {
-		super.visit(n, arg);
-		 //System.out.println(n.getDeclarationAsString());
-		 MainRun.MethodList.add(n.toString());
-		 String MethodContent=n.toString();
-		 //String MethodContent=n.getDeclarationAsString().substring(n.getDeclarationAsString().lastIndexOf("(")+1,n.getDeclarationAsString().lastIndexOf(")"))+MainRun.MethodEndSpecifier;
-		 //System.out.println(S.substring(0,S.lastIndexOf(" ")));
-		 try {
-				FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS, MethodContent);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+	public void visit(MethodCallExpr cu, ClassInstance classInstance) {
+		super.visit(cu, classInstance);
+		System.out.println(cu.getName());
+		System.out.println("parent method: " + cu.getParentNode().get().getParentNode().get().getParentNode().get().getChildNodes().get(0).toString());
+		System.out.println("new "+ cu.toString());
+		
+}
 }
