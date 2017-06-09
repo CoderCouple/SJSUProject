@@ -4,8 +4,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileOperations {
+	File f;
+	FileOperations(String file)
+	{
+		f= new File(file);
+	}
 
-	public static String getFileExtension(File file) {
+	public String getFileExtension(File file) {
 		String name = file.getName();
 		try {
 			return name.substring(name.lastIndexOf(".") + 1);
@@ -14,15 +19,12 @@ public class FileOperations {
 		}
 	}
 
-	public static void readWriteFileContent(String TARGET_JAVA_FILE_ACCESS, String FileContent) throws IOException {
-
-		File FinalOutputFile = new File(TARGET_JAVA_FILE_ACCESS);
-
-		if (!FinalOutputFile.exists()) {
-			FinalOutputFile.createNewFile();
+	public void writeToFileContent( String FileContent) throws IOException {
+		if (!f.exists()) {
+			f.createNewFile();
 		}
 
-		FileWriter FileWriterMachine = new FileWriter(FinalOutputFile.getAbsoluteFile(), true);
+		FileWriter FileWriterMachine = new FileWriter(f.getAbsoluteFile(), true);
 		BufferedWriter BufferedWriterMachine = new BufferedWriter(FileWriterMachine);
 
 		BufferedWriterMachine.write(FileContent);
@@ -47,30 +49,29 @@ public class FileOperations {
 		}
 	}
 
-	public static void readListContent(String SOURCE_FILE_PATH) {
+	public void readListContent(String SOURCE_FILE_PATH) {
 		final File file = new File(SOURCE_FILE_PATH);
 		for (final File child : file.listFiles()) {
 			if (!child.isDirectory() && getFileExtension(child).toLowerCase().equals("java")) {
-				MainRun.FileListAcess.add(getFileName(child, SOURCE_FILE_PATH));
+				MainRun.FileListAccess.add(getFileName(child, SOURCE_FILE_PATH));
 			}
 		}
 
 	}
 	
-	public static void classStart() {
+	public void classStart() {
 		
 		try {
-			FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS,"{");
+			writeToFileContent("{");
 			} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	
-	public static void classEnd() {
+	public void classEnd() {
 		try {
-			FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS,"}");
+			writeToFileContent("}");
 			} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,14 +79,12 @@ public class FileOperations {
 		
 	}
 	
-	public static void deleteFile(String FileName) throws IOException {
+	public void deleteFile() throws IOException {
 
-		File FinalOutputFileToBeDeleted = new File(FileName);
         //System.out.println(FileName);
-		if (!FinalOutputFileToBeDeleted.exists()) {
-			FinalOutputFileToBeDeleted.delete();
+		if (f.exists()) {
+			f.delete();
 		}
-		System.out.println(FinalOutputFileToBeDeleted.delete());
 	}
 	
 }
