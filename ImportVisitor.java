@@ -3,18 +3,12 @@ import java.io.IOException;
 import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
-
-public class ImportVisitor extends VoidVisitorAdapter<Object> {
+public class ImportVisitor extends VoidVisitorAdapter<ClassInstance> {
 	@Override
-	public void visit(ImportDeclaration n, Object arg) {
+	public void visit(ImportDeclaration n, ClassInstance arg) {
+		//System.out.println("trying:" +arg.toString());
 		super.visit(n, arg);
-		System.out.println(n.toString());
-		String FileContent=n.toString();
-		try {
-			FileOperations.readWriteFileContent(MainRun.TARGET_JAVA_FILE_ACCESS,FileContent);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//System.out.println(n.toString());
+		arg.setImportStatements(n.toString());
 	}
 }
